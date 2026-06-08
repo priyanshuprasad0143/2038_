@@ -21,6 +21,8 @@ import {
   WishlistContext,
 } from "../context/WishlistContext"
 
+import productsData from "../data/products"
+
 function ProductDetails() {
   const { id } =
     useParams()
@@ -60,19 +62,13 @@ function ProductDetails() {
     useState("")
 
   useEffect(() => {
-    const savedProducts =
-      JSON.parse(
-        localStorage.getItem(
-          "adminProducts"
-        )
-      ) || []
 
     setProducts(
-      savedProducts
+      productsData
     )
 
     const foundProduct =
-      savedProducts.find(
+      productsData.find(
         (item) =>
           item.id ===
           Number(id)
@@ -92,6 +88,7 @@ function ProductDetails() {
     setReviews(
       savedReviews
     )
+
   }, [id])
 
   if (!product) {
