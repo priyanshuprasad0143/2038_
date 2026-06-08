@@ -15,6 +15,8 @@ import {
   WishlistContext,
 } from "../context/WishlistContext"
 
+import productsData from "../data/products"
+
 function Products() {
   const [products, setProducts] =
     useState([])
@@ -33,8 +35,6 @@ function Products() {
   )
 
   useEffect(() => {
-    import productsData from "../data/products"
-
     setProducts(
       productsData
     )
@@ -77,23 +77,19 @@ function Products() {
     <>
       <Navbar />
 
-      <div className="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen px-8 py-12">
+      <div className="bg-gray-100 min-h-screen px-8 py-12">
 
-        <h1 className="text-5xl font-bold text-center mb-3">
+        <h1 className="text-5xl font-bold text-center mb-10">
           Our Products
         </h1>
 
-        <p className="text-center text-gray-500 mb-10 text-lg">
-          Find your favorite items
-        </p>
-
         {/* Search + Filter */}
-        <div className="bg-white p-5 rounded-[30px] shadow-lg flex flex-col md:flex-row gap-4 justify-between items-center mb-12 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-4 justify-center mb-10">
 
           <input
             type="text"
-            placeholder="🔍 Search product..."
-            className="border p-4 rounded-2xl w-full md:w-[70%] outline-none focus:ring-2 focus:ring-yellow-400"
+            placeholder="Search product..."
+            className="border p-4 rounded-2xl w-full md:w-96 shadow-sm"
             value={search}
             onChange={(e) =>
               setSearch(
@@ -103,7 +99,7 @@ function Products() {
           />
 
           <select
-            className="border p-4 rounded-2xl w-full md:w-[30%] outline-none focus:ring-2 focus:ring-yellow-400"
+            className="border p-4 rounded-2xl shadow-sm"
             value={category}
             onChange={(e) =>
               setCategory(
@@ -117,9 +113,7 @@ function Products() {
                 index
               ) => (
                 <option
-                  key={
-                    index
-                  }
+                  key={index}
                   value={cat}
                 >
                   {cat}
@@ -129,21 +123,8 @@ function Products() {
           </select>
         </div>
 
-        {/* Total Products */}
-        <div className="max-w-7xl mx-auto mb-6">
-          <p className="text-gray-600 text-lg font-medium">
-            Showing{" "}
-            <span className="font-bold text-black">
-              {
-                filteredProducts.length
-              }
-            </span>{" "}
-            products
-          </p>
-        </div>
-
         {/* Products */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
           {filteredProducts.length >
           0 ? (
@@ -155,7 +136,7 @@ function Products() {
                   key={
                     product.id
                   }
-                  className="bg-white rounded-[35px] overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300 relative"
+                  className="bg-white rounded-[35px] overflow-hidden shadow-lg hover:scale-105 transition duration-300 relative"
                 >
 
                   {/* Wishlist */}
@@ -165,7 +146,7 @@ function Products() {
                         product
                       )
                     }
-                    className="absolute top-4 right-4 bg-white shadow-md w-12 h-12 rounded-full text-2xl flex items-center justify-center hover:scale-110 transition z-10"
+                    className="absolute top-4 right-4 bg-white shadow-md w-12 h-12 rounded-full text-2xl flex items-center justify-center hover:scale-110 transition"
                   >
                     {isInWishlist(
                       product.id
@@ -193,31 +174,24 @@ function Products() {
                       }
                     </span>
 
-                    <h2 className="text-2xl font-bold mt-4 line-clamp-1">
+                    <h2 className="text-2xl font-bold mt-4">
                       {
                         product.name
                       }
                     </h2>
 
-                    <p className="text-gray-500 mt-2 line-clamp-2 h-12">
+                    <p className="text-gray-500 mt-2 line-clamp-2">
                       {
                         product.description
                       }
                     </p>
 
-                    <div className="flex justify-between items-center mt-5">
-
-                      <p className="text-green-600 text-2xl font-bold">
-                        ₹
-                        {
-                          product.price
-                        }
-                      </p>
-
-                      <span className="text-yellow-500 font-bold">
-                        ⭐ 4.9
-                      </span>
-                    </div>
+                    <p className="text-green-600 text-2xl font-bold mt-4">
+                      ₹
+                      {
+                        product.price
+                      }
+                    </p>
 
                     <Link
                       to={`/product/${product.id}`}
@@ -232,16 +206,8 @@ function Products() {
               )
             )
           ) : (
-            <div className="col-span-full text-center mt-20">
-
-              <h2 className="text-4xl font-bold text-gray-500">
-                No Products Found 😢
-              </h2>
-
-              <p className="text-gray-400 mt-3">
-                Try another search or category
-              </p>
-
+            <div className="col-span-full text-center text-3xl font-bold text-gray-500 mt-10">
+              No Products Found 😢
             </div>
           )}
         </div>
