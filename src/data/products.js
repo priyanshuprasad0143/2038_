@@ -2,10 +2,10 @@ const products = [
   {
     id: 1,
     name: "Ghee Baati",
-    category: "Food",
+    category: "Pija",
     price: 199,
     image:
-      "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800",
+      "https://m.media-amazon.com/images/I/51XdyxlMaCL.jpg",
     description:
       "Traditional and delicious Ghee Baati made with rich desi ghee.",
   },
@@ -16,7 +16,7 @@ const products = [
     category: "Drink",
     price: 49,
     image:
-      "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?w=800",
+      "https://c8.alamy.com/comp/2FKWHYF/fresh-mango-juice-close-up-design-concept-of-smoothie-cold-drink-in-a-glass-cup-with-paper-straw-on-gray-table-background-2FKWHYF.jpg",
     description:
       "Refreshing Strom Mango cold drink with premium taste.",
   },
@@ -27,7 +27,7 @@ const products = [
     category: "Drink",
     price: 49,
     image:
-      "https://images.unsplash.com/photo-1581636625402-29b2a704ef13?w=800",
+      "https://upload.wikimedia.org/wikipedia/commons/c/cf/Tumbler_of_cola_with_ice.jpg",
     description:
       "Classic Strom Cola flavor for a refreshing experience.",
   },
@@ -38,7 +38,7 @@ const products = [
     category: "Drink",
     price: 49,
     image:
-      "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=800",
+      "https://thumbs.dreamstime.com/b/glass-fresh-orange-juice-ice-cubes-slices-ripe-oranges-surround-drink-white-surface-refreshing-cold-beverage-395306884.jpg",
     description:
       "Fresh and tangy Strom Orange drink.",
   },
@@ -49,7 +49,7 @@ const products = [
     category: "Chocolate",
     price: 99,
     image:
-      "https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=800",
+      "https://jindalcocoa.com/cdn/shop/files/DarkChocolateClassic_d43f0e02-bb10-4276-a95e-f704f6c1a6f6.jpg?v=1742475843",
     description:
       "Premium handmade chocolate with rich cocoa taste.",
   },
@@ -60,7 +60,7 @@ const products = [
     category: "Snacks",
     price: 79,
     image:
-      "https://images.unsplash.com/photo-1576107232684-1279f390859f?w=800",
+      "https://www.ranioil.com/wp-content/uploads/2024/01/spiral-potato-featured-img-1.webp",
     description:
       "Crispy and tasty spiral potato snack.",
   },

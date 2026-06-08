@@ -33,15 +33,10 @@ function Products() {
   )
 
   useEffect(() => {
-    const savedProducts =
-      JSON.parse(
-        localStorage.getItem(
-          "adminProducts"
-        )
-      ) || []
+    import productsData from "../data/products"
 
     setProducts(
-      savedProducts
+      productsData
     )
   }, [])
 
